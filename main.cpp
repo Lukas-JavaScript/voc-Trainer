@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iterator>  
 
 using namespace std;
 
@@ -30,6 +31,12 @@ int main() {
 		voc_english.push_back(english_word);
 		cout << "You added the word: " + german_word + " - " + english_word + "\n";
 		cout << "Number of edited words: " << to_string(voc_german.size()) << "\n";
+		ofstream german_file("./vocabulary_german.txt");
+		ofstream english_file("./vocabulary_english.txt");
+		ostream_iterator<string> german_out_it(german_file, "\n");
+		copy(voc_german.begin(), voc_german.end(), german_out_it);
+		ostream_iterator<string> english_out_it(english_file, "\n");
+		copy(voc_english.begin(), voc_english.end(), english_out_it);
 
 	} else if (choice == "2") {
 		cout << "You chose to start the test.\n";
