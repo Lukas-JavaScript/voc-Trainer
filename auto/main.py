@@ -2,7 +2,6 @@ import subprocess
 import os
 
 os.chdir("..")
-
 def safe_run(command):
     try:
         subprocess.run(command, check=True)
