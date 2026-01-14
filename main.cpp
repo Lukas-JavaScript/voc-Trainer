@@ -50,9 +50,17 @@ int main() {
 	} else if (choice == "2") {
 		cout << "You chose to start the test.\n";
 		cout << "Test is starting...\n";
-		ifstream german_file("./vocabulary_german.txt");
-		ifstream english_file("./vocabulary_english.txt");
-		string line;
+		int random = rand() % voc_german.size();
+		string selected_element = voc_german[random];
+		cout << "What is the English translation of the German word: " + selected_element + "?\n";
+		string user_answer;
+		cin >> user_answer;
+		if (user_answer == voc_english[random]) {
+			cout << "Correct! Well done. All right!\n";
+		} else {
+			cout << "Incorrect. The correct translation is: " + voc_english[random] + "\n";
+		}
+
 	} else {
 		cout << "Invalid choice. Please restart the program and enter 1 or 2.\n";
 	}
