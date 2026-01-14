@@ -29,7 +29,7 @@ int main() {
 		voc_german.push_back(german_word);
 		voc_english.push_back(english_word);
 		cout << "You added the word: " + german_word + " - " + english_word + "\n";
-		cout << "Number of edited words: " << voc_german.size() << "\n";
+		cout << "Number of edited words: " << to_string(voc_german.size()) << "\n";
 
 	} else if (choice == "2") {
 		cout << "You chose to start the test.\n";
