@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main() {
+int main() {	
 	string choice;
 	vector<string> voc_german;
 	vector<string> voc_english;
@@ -21,14 +21,15 @@ int main() {
 	if (choice == "1") {
 		cout << "You chose to add a new word.\n";
 		cout << "Which word would you like to add? (german): ";
-		string german;
-		string english;
-		cin >> german;
+		string german_word;
+		string english_word;
+		cin >> german_word;
 		cout << "Enter the English translation: ";
-		cin >> english;
-		voc_german.push_back(german);
-		voc_english.push_back(english);
-		cout << "You added the word: " + german + " - " + english + "\n";
+		cin >> english_word;
+		voc_german.push_back(german_word);
+		voc_english.push_back(english_word);
+		cout << "You added the word: " + german_word + " - " + english_word + "\n";
+		cout << "Number of edited words: " << voc_german.size() << "\n";
 
 	} else if (choice == "2") {
 		cout << "You chose to start the test.\n";
