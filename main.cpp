@@ -13,5 +13,14 @@ int main() {
 	cout << "Your choice: ";
 	string choice;
 	cin >> choice;
+	if (choice == "1") {
+		cout << "You chose to add a new word.\n";
+		// Code to add a new word would go here
+	} else if (choice == "2") {
+		cout << "You chose to start the test.\n";
+		// Code to start the test would go here
+	} else {
+		cout << "Invalid choice. Please restart the program and enter 1 or 2.\n";
+	}
 	return 0;
 }
