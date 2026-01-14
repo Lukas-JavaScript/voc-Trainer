@@ -10,7 +10,16 @@ int main() {
 	string choice;
 	vector<string> voc_german;
 	vector<string> voc_english;
-	cout << "Welcome to the vocabulary learner!\n";
+	ifstream german_file("./vocabulary_german.txt");
+	ifstream english_file("./vocabulary_english.txt");
+	string line;
+	while (getline(german_file, line)) {
+			voc_german.push_back(line);
+		}
+		while (getline(english_file, line)) {
+			voc_english.push_back(line);
+		}
+	cout << "Welcome to the vocabulary learner!\n"; 
 	cout << "This program helps you learn new words.\n";
 	cout << "Let's get started!\n";
 	cout << "Please enter 1 or 2\n";
@@ -41,6 +50,9 @@ int main() {
 	} else if (choice == "2") {
 		cout << "You chose to start the test.\n";
 		cout << "Test is starting...\n";
+		ifstream german_file("./vocabulary_german.txt");
+		ifstream english_file("./vocabulary_english.txt");
+		string line;
 	} else {
 		cout << "Invalid choice. Please restart the program and enter 1 or 2.\n";
 	}
