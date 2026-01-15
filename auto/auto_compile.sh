@@ -1,1 +1,1 @@
-cd .. && g++ main.cpp -o main
+cd .. && g++ main.cpp -o Linux/main && cd auto
