@@ -1,1 +1,1 @@
-cd .. && g++ main.cpp -o main.exe
+cd .. && g++ main.cpp -o main
