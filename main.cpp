@@ -4,7 +4,8 @@
 #include <fstream>
 #include <iterator>  
 
-using namespace std;
+using namespace std;    
+
 void start() {
 	cout << "Welcome to the vocabulary learner!\n"; 
 	cout << "This program helps you learn new words.\n";
@@ -14,7 +15,12 @@ void start() {
 	cout << "2. Start test\n";
 	cout << "Your choice: ";
 }
-
+string used_choice() {
+	string choice;
+	cin >> choice;
+	cout << "You entered: " + choice + "\n";
+	return choice;
+}
 int main() {
 	bool exit = false;
 	string choice;
@@ -30,8 +36,7 @@ int main() {
 			voc_english.push_back(line);
 		}
 	start();
-	cin >> choice;
-	cout << "You entered: " + choice + "\n";
+	choice = used_choice();
 	if (choice == "1") {
 		cout << "You chose to add a new word.\n";
 		cout << "Which word would you like to add? (german): ";
