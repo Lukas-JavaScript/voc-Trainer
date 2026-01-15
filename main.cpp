@@ -21,23 +21,7 @@ string used_choice() {
 	cout << "You entered: " + choice + "\n";
 	return choice;
 }
-int main() {
-	bool exit = false;
-	string choice;
-	vector<string> voc_german;
-	vector<string> voc_english;
-	ifstream german_file("./vocabulary_german.txt");
-	ifstream english_file("./vocabulary_english.txt");
-	string line;
-	while (getline(german_file, line)) {
-			voc_german.push_back(line);
-		}
-		while (getline(english_file, line)) {
-			voc_english.push_back(line);
-		}
-	start();
-	choice = used_choice();
-	if (choice == "1") {
+void add(vector<string>& voc_german, vector<string>& voc_english) {
 		cout << "You chose to add a new word.\n";
 		cout << "Which word would you like to add? (german): ";
 		string german_word;
@@ -55,6 +39,25 @@ int main() {
 		copy(voc_german.begin(), voc_german.end(), german_out_it);
 		ostream_iterator<string> english_out_it(english_file, "\n");
 		copy(voc_english.begin(), voc_english.end(), english_out_it);
+}
+int main() {
+	bool exit = false;
+	string choice;
+	vector<string> voc_german;
+	vector<string> voc_english;
+	ifstream german_file("./vocabulary_german.txt");
+	ifstream english_file("./vocabulary_english.txt");
+	string line;
+	while (getline(german_file, line)) {
+			voc_german.push_back(line);
+		}
+		while (getline(english_file, line)) {
+			voc_english.push_back(line);
+		}
+	start();
+	choice = used_choice();
+	if (choice == "1") {
+		add(voc_german, voc_english);
 
 	} else if (choice == "2") {
 		
