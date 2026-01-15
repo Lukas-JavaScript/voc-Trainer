@@ -6,7 +6,8 @@
 
 using namespace std;
 
-int main() {	
+int main() {
+	bool exit = false;
 	string choice;
 	vector<string> voc_german;
 	vector<string> voc_english;
@@ -48,17 +49,32 @@ int main() {
 		copy(voc_english.begin(), voc_english.end(), english_out_it);
 
 	} else if (choice == "2") {
-		cout << "You chose to start the test.\n";
-		cout << "Test is starting...\n";
-		int random = rand() % voc_german.size();
-		string selected_element = voc_german[random];
-		cout << "What is the English translation of the German word: " + selected_element + "?\n";
-		string user_answer;
-		cin >> user_answer;
-		if (user_answer == voc_english[random]) {
-			cout << "Correct! Well done. All right!\n";
-		} else {
-			cout << "Incorrect. The correct translation is: " + voc_english[random] + "\n";
+		
+		while (!exit) {
+			cout << "You chose to start the test.\n";
+			cout << "Test is starting...\n";
+			int random = rand() % voc_german.size();
+			string selected_element = voc_german[random];
+			cout << "What is the English translation of the German word: " + selected_element + "?\n";
+			string user_answer;
+			cin >> user_answer;
+			if (user_answer == voc_english[random]) {
+				cout << "Correct! Well done. All right!\n";
+			} else {
+				cout << "Incorrect. The correct translation is: " + voc_english[random] + "\n";
+			}
+			cout << "Do you want to continue? (y/n): ";
+			string continue_choice;
+			cin >> continue_choice;
+			if (continue_choice == "n") {
+				exit = true;
+				cout << "Exiting the test. Goodbye!\n";
+			} else if (continue_choice == "y") {
+				cout << "Continuing the test...\n";
+			} else {
+				cout << "Invalid choice. Exiting the test. Goodbye!\n";
+				exit = true;
+			}
 		}
 
 	} else {
