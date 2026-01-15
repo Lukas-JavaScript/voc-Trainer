@@ -4,7 +4,7 @@ import os
 os.chdir("..")
 def safe_run(command):
     try:
-        subprocess.run(command, check=True)
+        subprocess.run(command, check=True, shell=True)
     except subprocess.CalledProcessError as e:
         print(f"Failed to execute command: {command}")
         print(f"Details: {e}")
