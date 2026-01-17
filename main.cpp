@@ -50,6 +50,7 @@ void start_test(const vector<string>& voc_german, const vector<string>& voc_engl
 			int random = rand() % voc_german.size();
 			string selected_element = voc_german[random];
 			cout << "What is the English translation of the German word: " + selected_element + "?\n";
+			cout << "Your answer: ";
 			string user_answer;
 			cin >> user_answer;
 			if (user_answer == voc_english[random]) {
@@ -57,17 +58,25 @@ void start_test(const vector<string>& voc_german, const vector<string>& voc_engl
 			} else {
 				cout << "Incorrect. The correct translation is: " + voc_english[random] + "\n";
 			}
-			cout << "Do you want to continue? (y/n): ";
+			cout << "Do you want to continue? (y/n)(default:y): ";
 			string continue_choice;
-			cin >> continue_choice;
+			cin.ignore();
+			getline(cin, continue_choice);
 			if (continue_choice == "n") {
 				exit = true;
 				cout << "Exiting the test. Goodbye!\n";
-			} else if (continue_choice == "y") {
+			} 
+			else if (continue_choice == "y") {
 				cout << "Continuing the test...\n";
-			} else {
-				cout << "Invalid choice. Exiting the test. Goodbye!\n";
-				exit = true;
+				exit = false;
+			}
+			else if (continue_choice == "") {
+				cout << "Continuing the test...\n";
+				exit = false;
+			} 
+			else {
+				cout << "Invalid choice. Exiting the test. Let's continue!\n";
+				exit = false;
 			}
 		}
 }
