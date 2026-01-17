@@ -4,15 +4,10 @@
 #include <fstream>
 #include <iterator>  
 #include "components/start.hpp"
+#include "components/used_choice.hpp"
 
 using namespace std;    
 
-string used_choice() {
-	string choice;
-	cin >> choice;
-	cout << "You entered: " + choice + "\n";
-	return choice;
-}
 bool exit_program(bool exit) {
 	cout << "Do you want to continue? (y/n)(default:y): ";
 	string continue_choice;
