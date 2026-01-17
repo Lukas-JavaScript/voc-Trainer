@@ -1,4 +1,6 @@
 #pragma once
 #include <iostream>
 
-std::string used_choice();
+using namespace std;
+
+string used_choice();

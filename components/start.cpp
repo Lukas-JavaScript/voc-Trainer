@@ -8,6 +8,6 @@ void start() {
 	cout << "Let's get started!\n";
 	cout << "Please enter 1 or 2\n";
 	cout << "1. Add a new word\n";
-	cout << "2. Start test\n";
+	cout << "2. Start test" << endl;
 	cout << "Your choice: ";
 }

@@ -5,32 +5,9 @@
 #include <iterator>  
 #include "components/start.hpp"
 #include "components/used_choice.hpp"
+#include "components/exit_program.hpp"
 
 using namespace std;    
-
-bool exit_program(bool exit) {
-	cout << "Do you want to continue? (y/n)(default:y): ";
-	string continue_choice;
-	cin.ignore();
-	getline(cin, continue_choice);
-	if (continue_choice == "n") {
-		exit = true;
-		cout << "Exiting the test. Goodbye!\n";
-	} 
-	else if (continue_choice == "y") {
-		cout << "Continuing the test...\n";
-		exit = false;
-	}
-	else if (continue_choice == "") {
-		cout << "Continuing the test...\n";
-		exit = false;
-	} 
-	else {
-		cout << "Invalid choice. Exiting the test. Let's continue!\n";
-		exit = false;
-	}
-	return exit;
-}
 
 void add(vector<string>& voc_german, vector<string>& voc_english, bool& exit) {
 	cout << "You chose to add a new word.\n";
