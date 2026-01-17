@@ -46,7 +46,8 @@ bool exit_program(bool exit) {
 	return exit;
 }
 
-void add(vector<string>& voc_german, vector<string>& voc_english) {
+void add(vector<string>& voc_german, vector<string>& voc_english, bool& exit) {
+	while(!exit) {
 		cout << "You chose to add a new word.\n";
 		cout << "Which word would you like to add? (german): ";
 		string german_word;
@@ -64,6 +65,8 @@ void add(vector<string>& voc_german, vector<string>& voc_english) {
 		copy(voc_german.begin(), voc_german.end(), german_out_it);
 		ostream_iterator<string> english_out_it(english_file, "\n");
 		copy(voc_english.begin(), voc_english.end(), english_out_it);
+		exit = exit_program(exit);
+	}
 }
 
 void start_test(const vector<string>& voc_german, const vector<string>& voc_english, bool& exit) {
@@ -101,7 +104,7 @@ int main() {
 	start();
 	choice = used_choice();
 	if (choice == "1") {
-		add(voc_german, voc_english);
+		add(voc_german, voc_english, exit);
 
 	} else if (choice == "2") {
 		start_test(voc_german, voc_english, exit);
