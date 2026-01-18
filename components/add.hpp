@@ -1,3 +1,5 @@
+#ifndef ADD_HPP
+#define ADD_HPP
 #pragma once
 #include <iostream>
 #include <vector>
@@ -10,3 +12,4 @@
 using namespace std;
 
 void add(vector<string>& voc_german, vector<string>& voc_english, bool& exit);  
+#endif

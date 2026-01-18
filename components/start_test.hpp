@@ -1,3 +1,5 @@
+#ifndef START_TEST_HPP
+#define START_TEST_HPP
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,3 +10,4 @@
 using namespace std;
 
 void start_test(const vector<string>& voc_german, const vector<string>& voc_english, bool& exit);
+#endif
