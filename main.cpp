@@ -17,6 +17,10 @@ int main() {
 	vector<string> voc_english;
 	ifstream german_file("./vocabulary_german.txt");
 	ifstream english_file("./vocabulary_english.txt");
+    if (!german_file.is_open() || !english_file.is_open()) {
+        cerr << "Error: Could not open vocabulary files.\n";
+        return 1;
+    }
 	string line;
 	while (getline(german_file, line)) {
 			voc_german.push_back(line);
