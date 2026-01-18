@@ -11,14 +11,12 @@ bool exit_program(bool exit) {
 	getline(cin, continue_choice);
 	if (continue_choice == "n") {
 		exit = true;
-		cout << "Exiting the test. Goodbye!\n";
+		cout << "Exiting the program. Goodbye!\n";
 	} 
 	else if (continue_choice == "y") {
-		cout << "Continuing the test...\n";
 		exit = false;
 	}
 	else if (continue_choice == "") {
-		cout << "Continuing the test...\n";
 		exit = false;
 	} 
 	else {
