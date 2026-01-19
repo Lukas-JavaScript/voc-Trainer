@@ -1,6 +1,5 @@
 #ifndef ADD_HPP
 #define ADD_HPP
-#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
