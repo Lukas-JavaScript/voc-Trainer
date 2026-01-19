@@ -7,7 +7,6 @@ using namespace std;
 bool exit_program(bool exit) {
     cout << "Do you want to continue? (y/n)(default:y): ";
     string continue_choice;
-    cin.ignore();
     getline(cin, continue_choice);
     
     if (continue_choice == "n" || continue_choice == "N") {

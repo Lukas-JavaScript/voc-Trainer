@@ -23,7 +23,6 @@ void start_test(const vector<string>& voc_german, const vector<string>& voc_engl
         } else {
             cout << "Incorrect. The correct translation is: " << voc_english[random] << "\n";
         }
-        exit_program(exit);
-		cout << exit << "\n";
+        exit = exit_program(exit);
     }
 }
