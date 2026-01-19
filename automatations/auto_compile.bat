@@ -1,1 +1,1 @@
-cd .. && g++ main.cpp -o main.exe
+cd .. && g++ main.cpp components/start/start.cpp components/used_choice/used_choice.cpp components/exit_program/exit_program.cpp components/add.cpp components/start_test.cpp -o main.exe
