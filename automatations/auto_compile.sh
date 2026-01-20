@@ -1,1 +1,1 @@
-cd .. && g++ main.cpp components/start.cpp components/used_choice.cpp -o Linux/main && cd auto
+cd .. && g++ main.cpp components/start/start.cpp components/used_choice/used_choice.cpp components/exit_program/exit_program.cpp components/add.cpp components/start_test.cpp -o Linux/main && cd auto
